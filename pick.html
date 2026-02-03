@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pick an Option</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #e4b7c5 0%, #530c1c 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .pick-container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .pick-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .pick-buttons button {
+            padding: 15px 30px;
+            font-size: 40px;
+            border: none;
+            border-radius: 6px;
+            background: #667eea;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .pick-buttons button:hover {
+            background: #764ba2;
+        }
+    </style>
+</head>
+<body>
+    <div class="pick-container">
+        <h2>SO WOULD YOU LIKE TO BE MY VALENTINE??</h2>
+        <div class="pick-buttons">
+            <button id="btn1" onclick="congratulate()">YES</button>
+            <button id="btn2" onclick="shrinkBtn2()">NO</button>
+        </div>
+    </div>
+    <script>
+        let btn1Size = 1;
+        let btn2Size = 1;
+        
+        function congratulate() {
+            alert('Congratulations!, you picked the right and the only best option!, you may close everything fall into my hands now.mwwahh!!');
+        }
+        
+        function shrinkBtn2() {
+            btn1Size += 0.1;
+            btn2Size -= 0.1;
+            
+            document.getElementById('btn1').style.transform = `scale(${btn1Size})`;
+            document.getElementById('btn2').style.transform = `scale(${Math.max(btn2Size, 0.1)})`;
+        }
+    </script>
+</body>
+</html>
